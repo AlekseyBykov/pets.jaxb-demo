@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns="https://abykov.dev/person">
+    <name>User</name>
+    <age>0</age>
+    <address>
+        <street>Main Street</street>
+        <city>City</city>
+        <zip>123456</zip>
+    </address>
+    <contacts>
+        <contact>user@example.com</contact>
+        <contact>+00123456789</contact>
+    </contacts>
+</person>

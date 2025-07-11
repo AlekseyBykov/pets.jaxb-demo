@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://abykov.dev/person"
+           xmlns="https://abykov.dev/person"
+           elementFormDefault="qualified">
+
+    <xs:element name="person" type="PersonType"/>
+
+    <xs:complexType name="PersonType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="address" type="AddressType"/>
+            <xs:element name="contacts" type="ContactListType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AddressType">
+        <xs:sequence>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="zip" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContactListType">
+        <xs:sequence>
+            <xs:element name="contact" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

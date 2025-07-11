@@ -1,0 +1,11 @@
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               jaxb:version="2.1">
+
+    <jaxb:bindings schemaLocation="person.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:package name="dev.abykov.pets.jaxb.demo.generated"/>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+</jaxb:bindings>
