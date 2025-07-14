@@ -48,7 +48,5 @@ This project demonstrates:
 - Jakarta XML Bind (JAXB)
 - JUnit 5 + Spring Test
 
----
-
 ## License
 MIT License
