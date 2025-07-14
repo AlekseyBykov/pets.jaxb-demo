@@ -1,4 +1,4 @@
-package dev.abykov.pets.jaxb.demo.service;
+package dev.abykov.pets.jaxb.demo.feature.xsd_to_classes;
 
 import dev.abykov.pets.jaxb.demo.generated.PersonType;
 import jakarta.xml.bind.JAXBElement;
@@ -7,6 +7,7 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
 
 import javax.xml.namespace.QName;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.StringWriter;
@@ -17,20 +18,24 @@ public class PersonService {
     @Autowired
     private Jaxb2Marshaller marshaller;
 
-    public PersonType unmarshalPerson(File xmlFile) throws Exception {
+    public PersonType unmarshalPerson(File xmlFile) {
         Object result = marshaller.unmarshal(new StreamSource(xmlFile));
-        if (result instanceof jakarta.xml.bind.JAXBElement) {
+
+        if (result instanceof JAXBElement) {
             return ((JAXBElement<PersonType>) result).getValue();
         } else {
             return (PersonType) result;
         }
     }
 
-    public String marshalPerson(PersonType person) throws Exception {
-        StringWriter writer = new StringWriter();
-        QName qName = new QName("https://abykov.dev/person", "person");
+    public String marshalPerson(PersonType person) {
+        var qName = new QName("https://abykov.dev/person", "person");
+
         JAXBElement<PersonType> jaxbElement = new JAXBElement<>(qName, PersonType.class, person);
-        marshaller.marshal(jaxbElement, new javax.xml.transform.stream.StreamResult(writer));
+
+        StringWriter writer = new StringWriter();
+        marshaller.marshal(jaxbElement, new StreamResult(writer));
+
         return writer.toString();
     }
 }

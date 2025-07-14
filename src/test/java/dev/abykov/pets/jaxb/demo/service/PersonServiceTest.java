@@ -1,5 +1,6 @@
 package dev.abykov.pets.jaxb.demo.service;
 
+import dev.abykov.pets.jaxb.demo.feature.xsd_to_classes.PersonService;
 import dev.abykov.pets.jaxb.demo.generated.PersonType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

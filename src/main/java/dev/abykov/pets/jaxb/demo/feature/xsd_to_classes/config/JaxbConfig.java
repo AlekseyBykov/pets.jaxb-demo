@@ -1,4 +1,4 @@
-package dev.abykov.pets.jaxb.demo.config;
+package dev.abykov.pets.jaxb.demo.feature.xsd_to_classes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
